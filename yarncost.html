@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>MB Fashion</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <style>
+            body{
+                align-items: center;
+                background-color:cyan
+            }
+            #btn btn-success{
+                color: brown;
+            }
+        </style>
+        <script>
+            var deniyar , pic , pano;
+            var outputText;
+
+            function validate() {
+                deniyar1 = document.forms["input_form"] ["deniyar"].value;
+                pic1 = document.forms["input_form"] ["pic"].value;
+                pano1 = document.forms["input_form"] ["pano"].value;
+
+                if(deniyar1 == 0){
+                    outputText = "<em>deniyar<em> cannot equal zero!";
+                }else{
+                    var ans= (deniyar1*pic1*pano1*100/900000);
+                    outputText = "For the yarncost is<strong>" + ans + "<strong>";
+                }
+
+                document.getElementById("output_text").innerHTML = outputText;
+                
+            }
+        </script>
+    </head>
+    <body>
+        
+        <h2 class="text-center mt-4"> MB Fashion</h2>
+        
+      
+        <p class="text-center mt-4"> please enter the value <strong>deniyar</strong>& <strong>pic</strong>&<strong>pano</strong></p>
+    <div class="text-center mt-4">    
+        <form name="input_form" action="javascript:validate();"  class="fa fa-align-center" >
+            
+            deniyar: <input class="text-center mt-4" type="number" name="deniyar" required><br>
+            pic: <input class="text-center mt-4" type="number" name="pic" required><br>
+            pano: <input class="text-center mt-4" type="number" name="pano" required><br><br>
+            <input  type="submit" value="Calculate" class="btn btn-success">
+
+        </form>
+    </div>    
+        <p id="output_text"></p>
+    </body>
+</html>
+
